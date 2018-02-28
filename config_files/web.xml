@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Config>
+  <WebMode>LCCam</WebMode>
+  <ShowFactorySettings>false</ShowFactorySettings>
+  <EnforcerMobileVisible>false</EnforcerMobileVisible>
+  <EnforcerMobileEnabled>false</EnforcerMobileEnabled>
+  <Users>
+    <User>
+      <Name>Administrator</Name>
+      <Login>admin</Login>
+      <Password>5edb2d8dd2729188a5f1f596071354f3</Password>
+      <AccessLevel>2</AccessLevel>
+    </User>
+  </Users>
+</Config>

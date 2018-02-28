@@ -1,16 +1,16 @@
 
 #! /usr/bin/env
 
-from configobj import ConfigObj
+import xml.etree.ElementTree 
 
-file = ConfigObj("/etc/camera/gsm.xml")
+et = xml.etree.ElementTree.parse('/mnt/c/work/camera/camera_staging/config_files/gsm.xml')
+root = et.getroot()
+for element in root:
+#    if element.tag == tag:
+         print (element.tag,element.text)
 
-file["gsm_apn_provider"] = "aer.aerisapn.net"
-#file["PPP-Backup"] = "true"
 
-file.write()
-apn = file["gsm_apn_provider"] 
-#ppp = file["PPP-Backup"] 
 
-print("apn: {}".format(apn)}
+
+
 

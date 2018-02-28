@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config>
+  <connection_mode type="list" options="Radar|Sign" label="{{Connection mode (radar head or external sign)}}">Radar</connection_mode>
+  <DeviceMountingHeight type="number" units="m" range="2..4" label="{{Device mounting height}}">3.5</DeviceMountingHeight>
+  <RoadEdgeDistance type="number" units="m" label="{{Distance from device to road edge}}" range="1..6">2</RoadEdgeDistance>
+  <LeftSideInstallation type="boolean" label="{{Is it left side installation}}">false</LeftSideInstallation>
+  <font_color type="color" label="{{Font color (for overprints)}}">F9FF52</font_color>
+  <font_size type="number" range="10..30" label="{{Font size (for overprints)}}">20</font_size>
+  <snapshots_interval type="number" units="m" range="1..20" label="{{Dynamic interval between snapshots}}">10</snapshots_interval>
+  <units type="list" options="km/h|mph" label="{{Units of speed and distance}}">km/h</units>
+  <num_of_snapshots type="number" range="2..10" label="{{Number of snapshots}}">3</num_of_snapshots>
+  <min_radar_trigger_signal_level type="number" range="50..3000" label="{{Minimum target level to trigger}}" access="s">200</min_radar_trigger_signal_level>
+  <SafePace-listener-port type="number" range="1..65535" label="{{Ingress port}}">2040</SafePace-listener-port>
+  <FakeTicketRate type="number" range="0..60" label="{{Demo mode (ticket creation rate in minutes)}}" access="s">0</FakeTicketRate>
+  <RadarParameterGetRate type="number" range="1..60" label="{{Radar read cycle (in minutes)}}" access="s">5</RadarParameterGetRate>
+  <IlluminatorDelay type="number" range="0..200" label="{{Illuminator delay (in milliseconds)}}" access="s">0</IlluminatorDelay>
+  <SnapshotMethod type="number" range="0..1" label="{{Snapshot's algorithm(0:FIFO, 1:LIFO)}}" access="s">1</SnapshotMethod>
+  <RadarReadDelay type="number" range="300..1000" label="{{Radar read access delay(in milliseconds)}}" access="s">300</RadarReadDelay>
+  <RadarReqNumPerCycle type="number" range="1..99" label="{{Max serial communication requests per cycle}}" access="s">2</RadarReqNumPerCycle>
+  <WDServiceTimeout type="number" range="10..60" label="{{WD communication timeout(in milliseconds)}}" access="s">10</WDServiceTimeout>
+  <InternalDebug type="number" range="0..1" label="{{Debug logging level(0:Low,1:High)}}" access="s">0</InternalDebug>
+  <SnapshotsOffsetLIFO type="number" range="0..10" label="{{Snapshot offset for LIFO mode}}" access="s">1</SnapshotsOffsetLIFO>
+  <TriggerAsZeroSpeedInLIFO type="list" options="yes|no" label="{{Low trigger as zero speed in LIFO mode}}" access="s">yes</TriggerAsZeroSpeedInLIFO>
+  <JPGCompressionDay type="number" range="10..100" label="{{JPEG compression ratio daytime}}" access="s">60</JPGCompressionDay>
+  <JPGCompressionNight type="number" range="10..100" label="{{JPEG compression ratio nighttime}}" access="s">90</JPGCompressionNight>
+  <TargetIsLostDelay type="number" range="0..3000" label="{{Radar target loss delay(in milliseconds)}}" access="s">1200</TargetIsLostDelay>
+  <TriggerIsOffDelay type="number" range="0..2000" label="{{Trigger turn off delay(in milliseconds)}}" access="s">800</TriggerIsOffDelay>
+  <MinNumOfSnapshots type="number" range="2..10" label="{{Minimum number of snapshots)}}" access="s">2</MinNumOfSnapshots>
+</config>
