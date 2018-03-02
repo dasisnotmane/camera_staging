@@ -3,7 +3,7 @@
 
 import xml.etree.ElementTree 
 
-et = xml.etree.ElementTree.parse('/mnt/c/work/camera/camera_staging/config_files/gsm.xml')
+et = xml.etree.ElementTree.parse('./config_files/gsm.xml')
 root = et.getroot()
 for element in root:
 #    if element.tag == tag:

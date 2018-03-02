@@ -1,3 +1,4 @@
 {
-  "test_change_config.py::test_change_config": true
+  "test_change_config.py::test_change_config": true, 
+  "test_change_xml_config.py": true
 }
