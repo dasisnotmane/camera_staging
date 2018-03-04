@@ -1,6 +1,6 @@
 <Config>
   <ppp_serial_device access="f" label="{{Serial device}}">ttyUSB0</ppp_serial_device>
-  <gsm_apn_provider access="s" label="{{APN provider}}">shit</gsm_apn_provider>
+  <gsm_apn_provider access="s" label="{{APN provider}}">nice</gsm_apn_provider>
   <ETH-mode access="s" disable="DHCP:ETH-ipaddress,ETH-mask,ETH-gateway,ETH-dns1,ETH-dns2" label="{{Ethernet connection mode}}" options="DHCP|Static IP" type="list">DHCP</ETH-mode>
   <ETH-ipaddress access="s" label="{{IP Address}}">0.0.0.0</ETH-ipaddress>
   <ETH-mask access="s" label="{{IP Network Mask}}">0.0.0.0</ETH-mask>

@@ -73,11 +73,3 @@ if __name__ == "__main__":
     print(pretty_xml)
     write_pretty_xml_to_file(pretty_xml, xml_filename)
 
-
-'''
-    x = etree.parse("appt.xml")
-    #print(etree.tostring(x,pretty_print=True))
-    pretty_xml = etree.tostring(x, pretty_print=True, encoding="unicode")
-    with open("appt.xml","w") as f:
-        f.write(pretty_xml)
-'''
