@@ -83,13 +83,13 @@ def edit_xml(xml_file,tag,value):
     element = search_by_tag(root,tag)
     edit_by_tag(element,value)
 
-    root_string = Et.tostring(root,'utf-8')
+    root_string = Et.tostring(root,encoding='UTF-8')
     logger.debug("{}....editing..{} to {}".format(xml_file,tag,value) )
     write_tree_to_file(xml_file,root_string )
     logger.info("done editing file...")
 
     
-edit_xml("./config_files/gsm.xml","gsm_apn_provider","shit")
+#edit_xml("./config_files/gsm.xml","gsm_apn_provider","shit")
 '''
 root = Et_xml_obj('appt.xml')
 element = search_by_tag(root,"duration")

@@ -1,11 +1,11 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0"?>
 <Config>
   <Sent-Folder-size access="s" label="{{Maximum uploaded zip files stored in sent directory}}" range="1..500" type="number">400</Sent-Folder-size>
   <Sent-Folder-path access="s" label="{{Folder to store zip files}}" type="text">/home/root/tickets</Sent-Folder-path>
   <WD-upload_url access="s" label="{{URL for upload Zip files to WD}}" type="text">http://data.streetsoncloud.com/tcam/server/data</WD-upload_url>
   <WD-alarm_url access="s" label="{{URL for camera alarms reported to WD}}" type="text">http://data.streetsoncloud.com/tcam/server/setconfig</WD-alarm_url>
   <WD-event_url access="s" label="{{URL for camera events reported to WD}}" type="text">http://data.streetsoncloud.com/tcam/server/event</WD-event_url>
-  <WD-event_period access="s" label="{{Send events period to WD server in seconds}}" range="50..6000" type="number">300</WD-event_period>
+  <WD-event_period access="s" label="{{Send events period to WD server in seconds}}" range="60..6000" type="number">300</WD-event_period>
   <WD-calibration_url access="s" label="{{URL for camera calibration data reported to WD}}" type="text">http://data.streetsoncloud.com/tcam/server/calibration</WD-calibration_url>
   <Always-Connect access="s" label="{{Hold permanent 3G modem connection}}" type="boolean">true</Always-Connect>
   <Upload-ZIP-Files access="s" label="{{Upload ZIP files to WD server}}" type="boolean">true</Upload-ZIP-Files>

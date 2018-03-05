@@ -80,7 +80,7 @@ ctrl_interface_group=0
 ##### IEEE 802.11 related configuration #######################################
 
 # SSID to be used in IEEE 802.11 management frames
-ssid=SP_CAM_DF9C
+ssid=TL-Camera_500
 # Alternative formats for configuring SSID
 # (double quoted string, hexdump, printf-escaped string)
 #ssid2="test"
@@ -88,7 +88,7 @@ ssid=SP_CAM_DF9C
 #ssid2=P"hello\nthere"
 
 # UTF-8 SSID: Whether the SSID is to be interpreted using UTF-8 encoding
-#utf8_ssid=SP_CAM_DF9C
+#utf8_ssid=1
 
 # Country code (ISO/IEC 3166-1). Used to set regulatory domain.
 # Set as needed to indicate country in which device is operating.
@@ -249,7 +249,7 @@ auth_algs=3
 # 2 = clear SSID (ASCII 0), but keep the original length (this may be required
 #     with some clients that do not support empty SSID) and ignore probe
 #     requests for broadcast SSID
-ignore_broadcast_ssid=SP_CAM_DF9C
+ignore_broadcast_ssid=0
 
 # Additional vendor specfic elements for Beacon and Probe Response frames
 # This parameter can be used to add additional vendor specific element(s) into
@@ -1015,7 +1015,7 @@ own_ip_addr=127.0.0.1
 # and/or WPA2 (full IEEE 802.11i/RSN):
 # bit0 = WPA
 # bit1 = IEEE 802.11i/RSN (WPA2) (dot11RSNAEnabled)
-wpa=2
+wpa=3
 
 # WPA pre-shared keys for WPA-PSK. This can be either entered as a 256-bit
 # secret in hex format (64 hex digits), wpa_psk, or as an ASCII passphrase
@@ -1024,8 +1024,8 @@ wpa=2
 # wpa_psk (dot11RSNAConfigPSKValue)
 # wpa_passphrase (dot11RSNAConfigPSKPassPhrase)
 #wpa_psk=0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
-#wpa_passphrase=Password-TLDF9C-#!
-wpa_passphrase=Password-TLDF9C-#!
+#wpa_passphrase=secret passphrase
+wpa_passphrase=tlcamera500
 
 # Optionally, WPA PSKs can be read from a separate text file (containing list
 # of (PSK,MAC address) pairs. This allows more than one PSK to be configured.
@@ -1489,7 +1489,7 @@ rsn_preauth=1
 # If set, this shall be identifical to one of the BSSIDs in the homogeneous
 # ESS and this shall be set to the same value across all BSSs in homogeneous
 # ESS.
-#hessid=SP_CAM_DF9C
+#hessid=02:03:04:05:06:07
 
 # Roaming Consortium List
 # Arbitrary number of Roaming Consortium OIs can be configured with each line
@@ -1671,7 +1671,7 @@ rsn_preauth=1
 
 # OSU SSID (see ssid2 for format description)
 # This is the SSID used for all OSU connections to all the listed OSU Providers.
-#osu_ssid=SP_CAM_DF9C
+#osu_ssid="example"
 
 # OSU Providers
 # One or more sets of following parameter. Each OSU provider is started by the
@@ -1743,10 +1743,10 @@ rsn_preauth=1
 # BSSes include explicit configuration of all relevant configuration items.
 #
 #bss=wlan0_0
-#ssid=SP_CAM_DF9C
+#ssid=test2
 # most of the above items can be used here (apart from radio interface specific
 # items, like channel)
 
 #bss=wlan0_1
-#bssid=SP_CAM_DF9C
+#bssid=00:13:10:95:fe:0b
 # ...

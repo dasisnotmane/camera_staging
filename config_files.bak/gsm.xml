@@ -1,4 +1,3 @@
-<?xml version='1.0' encoding='UTF-8'?>
 <Config>
   <ppp_serial_device access="f" label="{{Serial device}}">ttyUSB0</ppp_serial_device>
   <gsm_apn_provider access="s" label="{{APN provider}}">iot.aer.net</gsm_apn_provider>
