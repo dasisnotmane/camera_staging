@@ -1,5 +1,6 @@
 import re 
 from os import fsync
+import configs
 
 def config_update(filename,dico):
 
@@ -18,9 +19,8 @@ def config_update(filename,dico):
     with open(filename,'wb') as f:
         f.write(pat.sub(jojo,content))
 
-
 config_variables = ['ssid','wpa_pairwise','wpa','wpa_passphrase']
 config_values = ['SP_CAM_DF9C','CCMP','2','Password-TLDF9C-#!']
 what_to_change = dict(zip(config_variables,config_values))
 
-config_update('./config_files/hostapd.conf',what_to_change)
+config_update(configs.hostfile,what_to_change)
