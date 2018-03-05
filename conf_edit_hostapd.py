@@ -3,8 +3,8 @@ from os import fsync
 
 def config_update(filename,dico):
 
-    RE = '((^'+'|'.join(dico.keys())+')\s*=)[^\r\n]*?(\r?\n|\r)' 
-    pat = re.compile(RE)
+    RE = '^((^'+'|'.join(dico.keys())+')\s*=)[^\r\n]*?(\r?\n|\r)'
+    pat = re.compile(RE,flags=re.MULTILINE)
     
     #This is a helper function that is used with regex sub()
     # wherenever a match occurs , this function is called
@@ -21,6 +21,6 @@ def config_update(filename,dico):
 
 config_variables = ['ssid','wpa_pairwise','wpa','wpa_passphrase']
 config_values = ['SP_CAM_DF9C','CCMP','2','Password-TLDF9C-#!']
-what_to_change = dict(zip(vars,new_values))
+what_to_change = dict(zip(config_variables,config_values))
 
 config_update('./config_files/hostapd.conf',what_to_change)
