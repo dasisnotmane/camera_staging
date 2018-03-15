@@ -13,10 +13,10 @@ def config_update(filename,dico):
     def jojo(match,dic = dico ):
         return dic[match.group(2)].join(match.group(1,3))
 
-    with open(filename,'rb') as f:
+    with open(filename,'r') as f:
         content = f.read() 
 
-    with open(filename,'wb') as f:
+    with open(filename,'w') as f:
         f.write(pat.sub(jojo,content))
 
 config_variables = ['ssid','wpa_pairwise','wpa','wpa_passphrase']
