@@ -4,7 +4,7 @@ import configs
 
 def config_update(filename,dico):
 
-    RE = '^((^'+'|'.join(dico.keys())+')\s*=)[^\r\n]*?(\r?\n|\r)'
+    RE = '^((^''|'.join(dico.keys())+')\s*=)[^\r\n]*?(\r?\n|\r)'
     pat = re.compile(RE,flags=re.MULTILINE)
     
     #This is a helper function that is used with regex sub()
