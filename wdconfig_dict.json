@@ -1,0 +1,14 @@
+{
+    "WD-upload_url": [
+        "http://data.streetsoncloud.com/tcam/server/data"
+    ],
+    "WD-alarm_url": [
+        "http://data.streetsoncloud.com/tcam/server/setconfig"
+    ],
+    "WD-event_url": [
+        "http://data.streetsoncloud.com/tcam/server/event"
+    ],
+    "WD-calibration_url": [
+        "http://data.streetsoncloud.com/tcam/server/calibration"
+    ]
+}

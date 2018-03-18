@@ -1,0 +1,123 @@
+import re 
+from os import fsync
+import configs
+import json 
+#import wdconfig
+
+filelocations = {
+
+    hostfile = './config_files/hostapd.conf'
+    gsmfile = './config_files/gsm.xml'
+    wdfile = './config_files/wdservice-module.xml'
+
+    }
+wdconfigs = {
+
+    WD-upload_url = "http://data.streetsoncloud.com/tcam/server/data"
+    WD-alarm_url = "http://data.streetsoncloud.com/tcam/server/setconfig"
+    WD-event_url = "http://data.streetsoncloud.com/tcam/server/event"
+    WD-calibration_url = "http://data.streetsoncloud.com/tcam/server/calibration"
+
+    }
+
+
+def config_update(filename,dico):
+
+    RE = '^((^''|'.join(dico.keys())+')\s*=)[^\r\n]*?(\r?\n|\r)'
+    pat = re.compile(RE,flags=re.MULTILINE)
+    
+    #This is a helper function that is used with regex sub()
+    # wherenever a match occurs , this function is called
+    # to substitute the string match 
+    def jojo(match,dic = dico ):
+        return dic[match.group(2)].join(match.group(1,3))
+
+    with open(filename,'r') as f:
+        content = f.read() 
+
+    with open(filename,'w') as f:
+        f.write(pat.sub(jojo,content))
+
+def xml_edit_gsm(filename,dico):
+
+    RE = '(<(gsm_apn_provider).*?>)(.*?)(<.*>)'
+    pat = re.compile(RE,flags=re.MULTILINE)
+
+    def sub(match,dic = dico):
+        return dic[match.group(2)].join(match.group(1,4))
+    with open(filename,'r') as f : 
+        content = f.read()
+    with open(filename,'w') as f:
+#        import pdb; pdb.set_trace()
+        f.write(pat.sub(sub,content))
+
+def read_wifi(filename):
+
+    RE_all = '(<(WD-upload_url|WD-alarm_url|WD-event_url|WD-calibration_url).*?>)(.*?)(<.*>)'
+    pat_all = re.compile(RE_all ,flags=re.MULTILINE)
+
+
+    RE_upload = '(<(WD-upload_url).*?>)(.*?)(<.*>)'
+    RE_alarm = '(<(WD-alarm_url).*?>)(.*?)(<.*>)'
+    RE_event = '(<(WD-event_url).*?>)(.*?)(<.*>)'
+    RE_calibration = '(<(WD-calibration_url).*?>)(.*?)(<.*>)'
+
+    pat_upload = re.compile(RE_upload,flags=re.MULTILINE)
+    pat_alarm = re.compile(RE_alarm ,flags=re.MULTILINE)
+    pat_event = re.compile(RE_event,flags=re.MULTILINE)
+    pat_calib = re.compile(RE_calibration,flags=re.MULTILINE)
+
+    with open(filename,'r') as f : 
+        content = f.read()
+
+'''
+    wdconfig_dict = {}
+    matches = pat_all.findall(content) 
+    for match in matches: 
+        wdconfig_dict[match[1]] = [match[2]]
+        json.dump(wdconfig_dict,open("wdconfig_dict.json","w"),indent=4)
+'''
+'''
+        with open("wdconfig",'a') as f: 
+           f.write(""+ "{} = ".format(match[1])+"\""+match[2]+"\"\n" )
+'''
+
+#    matches = pat.search(content)
+        
+#        print(""+ "\"{}\" : ".format(match[3])+"\""+match[2]+"\""  )  
+
+    def sub(match,dic = dico):
+        print(dic[match.group(2)].join(match.group(1,4)))
+        return dic[match.group(2)].join(match.group(1,4))
+
+    with open(filename,'w') as f : 
+        f.write(pat_upload.sub(sub,content))
+        f.write(pat_alarm.sub(sub,content))
+        f.write(pat_event.sub(sub,content))
+        f.write(pat_calib.sub(sub,content))
+
+#wdconfig_dict = eval(open('wdconfig').read())  
+#print(wdconfig_dict)
+
+read_wifi(filelocations['wdfile'],wdconfigs)
+
+'''
+config_variables = ['ssid','wpa_pairwise','wpa','wpa_passphrase']
+config_values = ['SP_CAM_DF9C','CCMP','2','Password-TLDF9C-#!']
+what_to_change = dict(zip(config_variables,config_values))
+
+config_update(configs.hostfile,what_to_change)
+'''
+'''
+gsm_configs = ['gsm_apn_provider']
+gsm_values = ['iot.aer.net']
+gsm_dic = dict(zip(gsm_configs,gsm_values))
+
+xml_edit_gsm(configs.gsmfile,gsm_dic)
+
+
+gsm_values = ['iot.aer.net']
+gsm_dic = dict(zip(gsm_configs,gsm_values))
+
+xml_edit_gsm(configs.gsmfile,gsm_dic)
+'''

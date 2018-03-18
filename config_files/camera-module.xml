@@ -14,7 +14,7 @@
   <CameraWidth type="number" range="320..1920" label="{{Image width (px)}}" access="f">1280</CameraWidth>
   <CameraHeight type="number" range="200..1080" label="{{Image height (px)}}" access="f">720</CameraHeight>
   <CameraRate type="number" range="5..60" label="{{Frame rate}}" access="f">5</CameraRate>
-  <FocalLength type="number" range="2..50" label="{{Focal length (mm)}}" access="f">12.6</FocalLength>
+  <FocalLength type="number" range="2..50" label="{{Focal length (mm)}}" access="f">16.7</FocalLength>
   <SensorWidth type="number" range="1..10" label="{{Sensor width (mm)}}" access="f">4.23</SensorWidth>
   <SensorHeight type="number" range="1..10" label="{{Sensor height (mm)}}" access="f">2.38</SensorHeight>
   <MaxResolutionWidth type="number" range="320..1920" label="{{Camera sensor max. width (px)}}" access="f">1920</MaxResolutionWidth>
