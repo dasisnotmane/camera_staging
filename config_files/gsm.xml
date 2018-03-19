@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Config>
   <ppp_serial_device access="f" label="{{Serial device}}">ttyUSB0</ppp_serial_device>
-  <gsm_apn_provider access="s" label="{{APN provider}}">iot.aet.net</gsm_apn_provider>
+  <gsm_apn_provider access="s" label="{{APN provider}}">aer.aerisapn.net</gsm_apn_provider>
   <ETH-mode access="s" disable="DHCP:ETH-ipaddress,ETH-mask,ETH-gateway,ETH-dns1,ETH-dns2" label="{{Ethernet connection mode}}" options="DHCP|Static IP" type="list">DHCP</ETH-mode>
   <ETH-ipaddress access="s" label="{{IP Address}}">0.0.0.0</ETH-ipaddress>
   <ETH-mask access="s" label="{{IP Network Mask}}">0.0.0.0</ETH-mask>

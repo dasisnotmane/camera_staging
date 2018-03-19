@@ -1,0 +1,1 @@
+ sshpass -f camphrase rsync --progress --delete -r -e ssh config_files.bak pi@192.168.1.133:/home/pi 
